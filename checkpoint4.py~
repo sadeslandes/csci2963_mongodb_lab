@@ -5,7 +5,6 @@ db = client.csci2963 #get db
 collection = db.definitions #get collection
 
 if __name__ == '__main__':
-    collection.delete_many({'word':'brainpower'})#to avoid duplicates when inserting
     print("find()")
     for definition in collection.find():
 	print(definition)    
@@ -22,6 +21,7 @@ if __name__ == '__main__':
     	print(match)
 
     print("\nLastly, insert")
+    collection.delete_many({'word':'brainpower'})#to avoid duplicates
     print("Before insert: search for word 'brainpower' returns {}".format(collection.count({'word':'brainpower'})))
     print("Insert Here")
     collection.insert_one({'word':'brainpower','definition':'O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA'})

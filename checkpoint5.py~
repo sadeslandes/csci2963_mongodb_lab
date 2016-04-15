@@ -16,7 +16,7 @@ def random_word_requester():
     doc = collection.find()[index]
     print("word: \"{}\"".format(doc['word']))
     print("defintion: \"{}\"".format(doc['definition']))
-    print("dates: [{}]".format(', '.join(doc['dates'])))
+    print("dates: {}".format(', '.join(doc['dates'])))
     
 
 
